@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="keiosus_stash_main" target="1.8" />
+      <module name="keiosus_stash_test" target="1.8" />
+      <module name="stashAI_main" target="1.8" />
+      <module name="stashai_main" target="1.8" />
+      <module name="stashai_test" target="1.8" />
+      <module name="stashAI_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
