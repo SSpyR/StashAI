@@ -1,30 +1,40 @@
 package net.stashai;
 
-import net.stashai.events.Events;
-import net.stashai.utils.Utils;
-import java.util.logging.Logger;
+import net.stashai.events.AnnotationListener;
+import sx.blah.discord.api.ClientBuilder;
 import sx.blah.discord.api.IDiscordClient;
+import sx.blah.discord.api.events.EventDispatcher;
+import sx.blah.discord.util.DiscordException;
+
+import java.util.logging.Logger;
 
 //Bot used to aquire items from the database of RPG like games, Destiny 2 will be done first
 public class Bot {
 
     static Logger logger = Logger.getLogger("Stash AI");
+    public static final String BOT_PREFIX = "?";
 
     public static void main(String[] args) {
-        logger.info("Starting Stash AI " + Utils.VERSION);
+        logger.info("LOGGING IN");
+        IDiscordClient client = Bot.createClient(args[0], true);
+        logger.info("REGISTERING CLIENT DISPATCHER");
+        EventDispatcher dispatcher = client.getDispatcher();
+        logger.info("REGISTERING LISTENERS");
+        dispatcher.registerListener(new AnnotationListener());
+    }
 
-        if (args.length != 1) {
-            System.out.println("Please enter the bots token as the first argument e.g java -jar thisjar.jar tokenhere");
-            return;
+    public static IDiscordClient createClient(String token, boolean login) {
+        ClientBuilder clientBuilder = new ClientBuilder();
+        clientBuilder.withToken(token);
+        try {
+            if (login) {
+                return clientBuilder.login();
+            } else {
+                return clientBuilder.build();
+            }
+        } catch (DiscordException e) {
+            e.printStackTrace();
+            return null;
         }
-
-        logger.info("Creating Discord Client Object");
-        IDiscordClient cli = Utils.getBuiltDiscordClient(args[0]);
-
-        logger.info("Registering Event Listeners");
-        cli.getDispatcher().registerListener(new Events());
-
-        logger.info("Accessing Guilds..");
-        cli.login();
     }
 }
