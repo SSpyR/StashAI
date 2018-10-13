@@ -8,7 +8,7 @@ import sx.blah.discord.util.DiscordException;
 
 import java.util.logging.Logger;
 
-//Bot used to aquire items from the database of RPG like games, Destiny 2 will be done first
+//TODO Implement next game database, other useful commands (about command? etc)
 public class Bot {
 
     static Logger logger = Logger.getLogger("Stash AI");

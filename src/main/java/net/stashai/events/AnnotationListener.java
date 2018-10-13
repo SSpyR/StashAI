@@ -13,7 +13,6 @@ public class AnnotationListener {
     private Command Command = new Command();
     private IMessage message;
 
-    //TODO commands not working, debug
     @EventSubscriber
     public void onMessageRecieved(MessageReceivedEvent event) {
         message = event.getMessage();
