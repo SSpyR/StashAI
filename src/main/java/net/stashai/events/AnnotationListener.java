@@ -29,8 +29,10 @@ public class AnnotationListener {
     public AnnotationListener() {
         this.hmap = new HashMap<String, Runnable>() {
             {
+                put("?about", () -> Command.about(message));
                 put("?help", () -> Command.help(message));
                 put("?destiny", () -> Command.destiny(message));
+                put("?wow", () -> Command.wow(message));
             }
         };
     }

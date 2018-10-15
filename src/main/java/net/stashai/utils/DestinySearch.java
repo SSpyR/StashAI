@@ -5,24 +5,15 @@ public class DestinySearch {
     public static String URL = "http://db.planetdestiny.com/items/search/";
 
     public static String search(String item) {
-        if (item.contains(" ")) {
-            String [] tokens = item.split(" ");
-            if (tokens.length == 2) {
-                return URL + tokens[0] + "%20" + tokens[1];
-            }
-            if (tokens.length == 3) {
-                return URL + tokens[0] + "%20" + tokens[1] + "%20" + tokens[2];
-            }
-            if (tokens.length == 4) {
-                return URL + tokens[0] + "%20" + tokens[1] + "%20" + tokens[2] + "%20" + tokens[3];
-            }
-            if (tokens.length == 5) {
-                return URL + tokens[0] + "%20" + tokens[1] + "%20" + tokens[2] + "%20" + tokens[3] + "%20" + tokens[4];
-            }
+        if (item.equals("?destiny")) {
+            return "No page request found, please enter an item/page name after the destiny command.";
+        }
+        else if (item.contains(" ")) {
+            String token = item.replaceAll(" ", "%20");
+            return URL + token;
         }
         else {
             return URL + item;
         }
-        return null;
     }
 }
