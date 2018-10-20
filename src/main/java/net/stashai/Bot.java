@@ -8,7 +8,8 @@ import sx.blah.discord.util.DiscordException;
 
 import java.util.logging.Logger;
 
-//TODO Implement next game database, other useful commands (about command? etc)
+//TODO Implement next game database, work on URL Encoder?, add implementation for a D&D helper
+//Link to add bot: https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot
 public class Bot {
 
     static Logger logger = Logger.getLogger("Stash AI");

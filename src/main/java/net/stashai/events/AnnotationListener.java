@@ -8,6 +8,8 @@ import sx.blah.discord.handle.obj.IMessage;
 
 import java.util.HashMap;
 
+import static net.stashai.Bot.logger;
+
 public class AnnotationListener {
 
     private Command Command = new Command();
@@ -27,12 +29,24 @@ public class AnnotationListener {
     HashMap<String, Runnable> hmap;
 
     public AnnotationListener() {
+        logger.info("EVENT LISTENER AND COMMANDS REGISTERED");
+
         this.hmap = new HashMap<String, Runnable>() {
             {
                 put("?about", () -> Command.about(message));
                 put("?help", () -> Command.help(message));
                 put("?destiny", () -> Command.destiny(message));
+                put("?d2", () -> Command.destiny(message));
                 put("?wow", () -> Command.wow(message));
+                put("?pathfinder", () -> Command.pathfinder(message));
+                put("?pf", () -> Command.pathfinder(message));
+                put("?5e", () -> Command.fiveE(message));
+                put("?dnd", () -> Command.fiveE(message));
+                put("?rollstats", () -> Command.statRolls(message));
+                put("?rs", () -> Command.statRolls(message));
+                put("?battlerite", () -> Command.battleRite(message));
+                put("?br", () -> Command.battleRite(message));
+                put("?brbuilds", () -> Command.brBuilds(message));
             }
         };
     }
