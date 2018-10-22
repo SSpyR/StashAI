@@ -1,6 +1,7 @@
 package net.stashai;
 
 import net.stashai.events.AnnotationListener;
+import net.stashai.events.ReadyHandler;
 import sx.blah.discord.api.ClientBuilder;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.api.events.EventDispatcher;
@@ -12,7 +13,7 @@ import java.util.logging.Logger;
 //Link to add bot: https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot
 public class Bot {
 
-    static Logger logger = Logger.getLogger("Stash AI");
+    public static Logger logger = Logger.getLogger("Stash AI");
     public static final String BOT_PREFIX = "?";
 
     public static void main(String[] args) {
@@ -22,6 +23,8 @@ public class Bot {
         EventDispatcher dispatcher = client.getDispatcher();
         logger.info("REGISTERING LISTENERS");
         dispatcher.registerListener(new AnnotationListener());
+        dispatcher.registerListener(new ReadyHandler());
+        logger.info("READY TO START");
     }
 
     public static IDiscordClient createClient(String token, boolean login) {

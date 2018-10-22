@@ -11,7 +11,7 @@ public class BattleriteSearch {
 
         String[] champs = {"Bakko", "Freya", "Croak", "Raigon", "Rook", "Ashka", "Thorn", "Oldur", "Blossom", "Jumong", "Lucie"
                             , "Pestilus", "Shifu", "Ezmo", "Iva", "Jamila", "Pearl", "Poloma", "Sirius", "Varesh", "Alysia", "Destiny"
-                            , "Jade", "Ruh Kaan", "Taya", "Ulric"};
+                            , "Jade", "Ruh Kaan", "Taya", "Ulric", "Zander"};
 
         if (champ.contains(" ")) {
             String [] a = champ.split(" ");

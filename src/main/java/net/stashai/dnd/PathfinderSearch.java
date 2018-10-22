@@ -4,9 +4,33 @@ public class PathfinderSearch {
 
     public static String URL = "https://www.d20pfsrd.com/";
 
+    //TODO add more races, and maybe start adding other pages as well
     public static String search(String term) {
         if (term.equals("?pathfinder") || term.equals("?pf")) {
             return "No page request found, please enter an item/page name after the pathfinder command.";
+        }
+
+        //simple navigation pages
+        if (term.equals("races")) {
+            return URL + term;
+        }
+        if (term.equals("classes")) {
+            return URL + term;
+        }
+        if (term.equals("feats")) {
+            return URL + term;
+        }
+        if (term.equals("weapons")) {
+            return URL + "equipment/" + term;
+        }
+        if (term.equals("armor")) {
+            return URL + "equipment/" + term;
+        }
+        if (term.equals("start gold")) {
+            return URL + "equipment";
+        }
+        if (term.equals("spells")) {
+            return URL + "magic/all-spells";
         }
 
         String type = getType(term);
@@ -27,12 +51,15 @@ public class PathfinderSearch {
         if (term.contains(" ")) {
             term = term.replace(" ", "-");
         }
+
         return URL + type + term;
     }
 
     public static String getType(String term) {
         //races
         String[] coreraces = {"dwarf", "elf", "gnome", "half-elf", "half-orc", "halfling", "human"};
+        String[] featuredraces = {"aasimar", "catfolk", "dhampir", "drow", "fetchling", "goblin", "hobgoblin", "ifrit",
+                                    "kobold", "orc", "oread", "ratfolk", "sylph", "tengu", "tiefling", "undine"};
 
         //classes
         String[] coreclasses = {"barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "wizard"};
@@ -46,6 +73,11 @@ public class PathfinderSearch {
         for (String s:coreraces) {
             if (term.equals(s)) {
                 return "races/core-races/";
+            }
+        }
+        for (String s:featuredraces) {
+            if (term.equals(s)) {
+                return "races/other-races/featured-races/arg-";
             }
         }
 

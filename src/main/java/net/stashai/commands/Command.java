@@ -45,7 +45,9 @@ public class Command {
                 + "\n"
                 + "This bot also has options for getting information"
                 + "\n"
-                + "for D&D purposes and making rolls for said RPG");
+                + "for D&D purposes and making rolls for said RPG"
+                + "\n"
+                + "*{Made by Angel LaVoie aka Keiosu}*");
     }
 
     //Destiny 2
@@ -54,7 +56,7 @@ public class Command {
             s = (message.getContent().toLowerCase().replace("?destiny ".toLowerCase(), ""));
         }
         if (message.toString().contains("?d2")) {
-            s = (message.getContent().toLowerCase().replace("?d ".toLowerCase(), ""));
+            s = (message.getContent().toLowerCase().replace("?d2 ".toLowerCase(), ""));
         }
         message.reply(DestinySearch.search(s));
         message.getChannel().sendMessage("(Search Engine provided by Planet Destiny)");

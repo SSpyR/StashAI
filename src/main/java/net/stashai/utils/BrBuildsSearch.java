@@ -11,7 +11,7 @@ public class BrBuildsSearch {
 
         String[] champs = {"bakko", "freya", "croak", "raigon", "rook", "ashka", "thorn", "oldur", "blossom", "jumong", "lucie"
                 , "pestilus", "shifu", "ezmo", "iva", "jamila", "pearl", "poloma", "sirius", "varesh", "alysia", "destiny"
-                , "jade", "ruh kaan", "taya", "ulric"};
+                , "jade", "ruh kaan", "taya", "ulric", "zander"};
 
         for (String s:champs) {
             if (champ.equals(s)) {
