@@ -9,8 +9,7 @@ import sx.blah.discord.util.DiscordException;
 
 import java.util.logging.Logger;
 
-//TODO Implement next game database, work on URL Encoder?, add implementation for a D&D helper
-//Link to add bot: https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot
+//TODO Implement next game database, add explanations for each command?, use reactions to see if a source was helpful?
 public class Bot {
 
     public static Logger logger = Logger.getLogger("Stash AI");
@@ -27,7 +26,7 @@ public class Bot {
         logger.info("READY TO START");
     }
 
-    public static IDiscordClient createClient(String token, boolean login) {
+    private static IDiscordClient createClient(String token, boolean login) {
         ClientBuilder clientBuilder = new ClientBuilder();
         clientBuilder.withToken(token);
         try {

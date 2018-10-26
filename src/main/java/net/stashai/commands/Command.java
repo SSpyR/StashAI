@@ -1,37 +1,23 @@
 package net.stashai.commands;
 
-import net.stashai.dnd.PathfinderSearch;
-import net.stashai.dnd.StatRolls;
-import net.stashai.utils.BattleriteSearch;
-import net.stashai.utils.BrBuildsSearch;
-import net.stashai.utils.DestinySearch;
-import net.stashai.utils.WoWSearch;
+import net.stashai.databases.dnd.FiveESearch;
+import net.stashai.databases.dnd.PathfinderSearch;
+import net.stashai.databases.dnd.StatRolls;
+import net.stashai.databases.battlerite.BattleriteSearch;
+import net.stashai.databases.battlerite.BrBuildsSearch;
+import net.stashai.databases.DestinySearch;
+import net.stashai.databases.WoWSearch;
 import sx.blah.discord.handle.obj.IMessage;
+
+import java.util.Arrays;
 
 public class Command {
 
     private String s = "";
 
+    //General Commands
     public void help(IMessage message) {
-        message.getChannel().sendMessage("**Current Commands** \n"
-                + "\n"
-                + "help"
-                + "\n"
-                + "about"
-                + "\n"
-                + "destiny or d2 (item)"
-                + "\n"
-                + "wow (item)"
-                + "\n"
-                + "pathfinder or pf (term)"
-                + "\n"
-                + "5e or dnd (term)"
-                + "\n"
-                + "rollstats or rs"
-                + "\n"
-                + "battlerite or br (champ)"
-                + "\n"
-                + "brbuilds (champ)");
+        message.getChannel().sendMessage(Help.list());
     }
 
     public void about(IMessage message) {
@@ -45,9 +31,18 @@ public class Command {
                 + "\n"
                 + "This bot also has options for getting information"
                 + "\n"
-                + "for D&D purposes and making rolls for said RPG"
+                + "for D&D purposes and making rolls for said RPG \n"
                 + "\n"
-                + "*{Made by Angel LaVoie aka Keiosu}*");
+                + "**Made by Angel LaVoie aka Keiosu**");
+    }
+
+    public void github(IMessage message) {
+        message.reply("Here is the GitHub link for the Bot: https://github.com/K3io5u/StashAI");
+        message.getChannel().sendMessage("(If you wish to contribute to this project, feel free to email stashaibot@gmail.com)");
+    }
+
+    public void invite(IMessage message) {
+        message.reply("Here is an invite link for Stash AI: https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot");
     }
 
     //Destiny 2
@@ -82,11 +77,19 @@ public class Command {
     }
 
     public void fiveE(IMessage message) {
-
+        if (message.toString().contains("?5e")) {
+            s = (message.getContent().toLowerCase().replace("?5e ".toLowerCase(), ""));
+        }
+        if (message.toString().contains("?dnd")) {
+            s = (message.getContent().toLowerCase().replace("?dnd ".toLowerCase(), ""));
+        }
+        message.reply(FiveESearch.search(s));
+        message.getChannel().sendMessage("(Pages provided by roll20)");
     }
 
     public void statRolls(IMessage message) {
-        message.reply(StatRolls.rolls());
+        message.reply(Arrays.toString(StatRolls.rolls()));
+        //message.getChannel().sendMessage(Arrays.toString(StatRolls.modifiers()));
     }
 
     //Battlerite

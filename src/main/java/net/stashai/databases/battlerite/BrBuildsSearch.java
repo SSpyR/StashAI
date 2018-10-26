@@ -1,8 +1,8 @@
-package net.stashai.utils;
+package net.stashai.databases.battlerite;
 
 public class BrBuildsSearch {
 
-    public static String URL = "https://www.battleritebuilds.com/characters/";
+    private static String URL = "https://www.battleritebuilds.com/characters/";
 
     public static String buildSearch(String champ) {
         if (champ.equals("?brbuilds")) {

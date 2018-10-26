@@ -26,7 +26,7 @@ public class AnnotationListener {
         }
     }
 
-    HashMap<String, Runnable> hmap;
+    private HashMap<String, Runnable> hmap;
 
     public AnnotationListener() {
         logger.info("EVENT LISTENER AND COMMANDS REGISTERED");
@@ -35,6 +35,9 @@ public class AnnotationListener {
             {
                 put("?about", () -> Command.about(message));
                 put("?help", () -> Command.help(message));
+                put("?github", () -> Command.github(message));
+                put("?invite", () -> Command.invite(message));
+                put("?inv", () -> Command.invite(message));
                 put("?destiny", () -> Command.destiny(message));
                 put("?d2", () -> Command.destiny(message));
                 put("?wow", () -> Command.wow(message));

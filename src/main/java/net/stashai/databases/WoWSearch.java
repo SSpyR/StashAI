@@ -1,8 +1,8 @@
-package net.stashai.utils;
+package net.stashai.databases;
 
 public class WoWSearch {
 
-    public static String URL = "https://www.wowhead.com/search?q=";
+    private static String URL = "https://www.wowhead.com/search?q=";
 
     public static String search(String item) {
         if (item.equals("?wow")) {

@@ -1,8 +1,8 @@
-package net.stashai.utils;
+package net.stashai.databases.battlerite;
 
 public class BattleriteSearch {
 
-    public static String URL = "https://topplerite.com/guide?target=";
+    private static String URL = "https://topplerite.com/guide?target=";
 
     public static String search(String champ) {
         if (champ.equals("?battlerite") || champ.equals("?br")) {
