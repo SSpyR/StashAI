@@ -17,7 +17,8 @@ public class Command {
 
     //General Commands
     public void help(IMessage message) {
-        message.getChannel().sendMessage(Help.list());
+        message.getClient().getOrCreatePMChannel(message.getAuthor()).sendMessage(Help.list());
+        message.getChannel().sendMessage("A list of commands have been sent to you!");
     }
 
     public void about(IMessage message) {
@@ -37,12 +38,15 @@ public class Command {
     }
 
     public void github(IMessage message) {
-        message.reply("Here is the GitHub link for the Bot: https://github.com/K3io5u/StashAI");
-        message.getChannel().sendMessage("(If you wish to contribute to this project, feel free to email stashaibot@gmail.com)");
+        message.getClient().getOrCreatePMChannel(message.getAuthor()).sendMessage("Here is the GitHub link for the Bot: https://github.com/K3io5u/StashAI"
+                + "\n"
+                + "(If you wish to contribute to this project, feel free to email stashaibot@gmail.com)");
+        message.getChannel().sendMessage("The GitHub link has been sent to you!");
     }
 
     public void invite(IMessage message) {
-        message.reply("Here is an invite link for Stash AI: https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot");
+        message.getClient().getOrCreatePMChannel(message.getAuthor()).sendMessage("Here is an invite link for Stash AI: https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot");
+        message.getChannel().sendMessage("A bot invite link has been sent to you!");
     }
 
     //Destiny 2
