@@ -13,7 +13,6 @@ public class PathfinderSearch {
         if (term.equals("?pathfinder") || term.equals("?pf")) {
             return "No page request found, please enter an item/page name after the pathfinder command.";
         }
-
         return pfData(term);
     }
 

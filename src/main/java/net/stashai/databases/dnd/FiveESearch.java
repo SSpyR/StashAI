@@ -13,7 +13,6 @@ public class FiveESearch {
         if (term.equals("?dnd") || term.equals("?5e")) {
             return "No page request found, please enter an item/page name after the 5e/dnd command.";
         }
-
         return dndData(term);
     }
 

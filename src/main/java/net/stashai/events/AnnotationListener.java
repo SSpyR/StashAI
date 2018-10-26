@@ -41,6 +41,8 @@ public class AnnotationListener {
                 put("?destiny", () -> Command.destiny(message));
                 put("?d2", () -> Command.destiny(message));
                 put("?wow", () -> Command.wow(message));
+                put("?maplestory", () -> Command.maplestory(message));
+                put("?mp2", () -> Command.maplestory(message));
                 put("?pathfinder", () -> Command.pathfinder(message));
                 put("?pf", () -> Command.pathfinder(message));
                 put("?5e", () -> Command.fiveE(message));

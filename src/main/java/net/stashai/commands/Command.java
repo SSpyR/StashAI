@@ -1,5 +1,6 @@
 package net.stashai.commands;
 
+import net.stashai.databases.MaplestorySearch;
 import net.stashai.databases.dnd.FiveESearch;
 import net.stashai.databases.dnd.PathfinderSearch;
 import net.stashai.databases.dnd.StatRolls;
@@ -66,6 +67,17 @@ public class Command {
         s = (message.getContent().toLowerCase().replace("?wow ".toLowerCase(), ""));
         message.reply(WoWSearch.search(s));
         message.getChannel().sendMessage("(Search Engine provided by WoWHead)");
+    }
+
+    public void maplestory(IMessage message) {
+        if (message.toString().contains("?maplestory")) {
+            s = (message.getContent().toLowerCase().replace("?maplestory ".toLowerCase(), ""));
+        }
+        if (message.toString().contains("?mp2")) {
+            s = (message.getContent().toLowerCase().replace("?mp2 ".toLowerCase(), ""));
+        }
+        message.reply(MaplestorySearch.search(s));
+        message.getChannel().sendMessage("(Pages provided by Maplestory 2 Gamepedia)");
     }
 
     //Dungeons and Dragons

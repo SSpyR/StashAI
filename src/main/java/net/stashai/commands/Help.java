@@ -17,6 +17,8 @@ public class Help {
                 + "\n"
                 + "wow (item)"
                 + "\n"
+                + "maplestory or mp2 (term)"
+                + "\n"
                 + "pathfinder or pf (term)"
                 + "\n"
                 + "5e or dnd (term)"
