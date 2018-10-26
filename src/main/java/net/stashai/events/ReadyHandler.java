@@ -12,6 +12,7 @@ public class ReadyHandler implements IListener<ReadyEvent> {
     @Override
     public void handle(ReadyEvent event) {
         logger.info("BOT STARTUP COMPLETE");
-        event.getClient().changePresence(StatusType.ONLINE, ActivityType.PLAYING, "with Databases");
+        int servers = event.getClient().getGuilds().size();
+        event.getClient().changePresence(StatusType.ONLINE, ActivityType.PLAYING, "with Databases on " + servers + " servers");
     }
 }
