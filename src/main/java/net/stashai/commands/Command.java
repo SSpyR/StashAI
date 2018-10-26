@@ -69,6 +69,7 @@ public class Command {
         message.getChannel().sendMessage("(Search Engine provided by WoWHead)");
     }
 
+    //MapleStory 2
     public void maplestory(IMessage message) {
         if (message.toString().contains("?maplestory")) {
             s = (message.getContent().toLowerCase().replace("?maplestory ".toLowerCase(), ""));

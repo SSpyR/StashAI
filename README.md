@@ -12,4 +12,4 @@ More coming soon!
 
 Add Stash AI to your server [here](https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot)
 
-[![Discord Bots](https://discordbots.org/api/widget/491779560577433609.svg)](https://discordbots.org/bot/491779560577433609)
+[![Discord Bots](https://discordbots.org/api/widget/491779560577433609.png)](https://discordbots.org/bot/491779560577433609)
