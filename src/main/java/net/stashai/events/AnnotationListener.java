@@ -33,11 +33,13 @@ public class AnnotationListener {
 
         this.hmap = new HashMap<String, Runnable>() {
             {
+                put("?shutdown", () -> Command.shutdown(message));
                 put("?about", () -> Command.about(message));
                 put("?help", () -> Command.help(message));
                 put("?github", () -> Command.github(message));
                 put("?invite", () -> Command.invite(message));
                 put("?inv", () -> Command.invite(message));
+                put("?supinv", () -> Command.supinv(message));
                 put("?destiny", () -> Command.destiny(message));
                 put("?d2", () -> Command.destiny(message));
                 put("?wow", () -> Command.wow(message));

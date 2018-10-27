@@ -1,9 +1,9 @@
 package net.stashai.databases.dnd;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
-//TODO Fix modifiers implementation
 public class StatRolls {
 
     private static int[] score = new int[6];
@@ -23,7 +23,7 @@ public class StatRolls {
         return scores;
     }
 
-    /*public static String[] modifiers() {
+    public static String[] modifiers() {
         int[] mod = new int[6];
         String[] mods;
 
@@ -31,8 +31,10 @@ public class StatRolls {
             int a = 20;
             int m = 5;
             while (a != score[k]) {
-                a = a-2;
-                m--;
+                a--;
+                if (a % 2 == 0 || (a+1) == 20) {
+                    m--;
+                }
             }
             mod[k] = m;
         }
@@ -40,32 +42,13 @@ public class StatRolls {
         mods = Arrays.toString(mod).split("[\\[\\]]")[1].split(", ");
 
         return mods;
-    }*/
+    }
 
     private static int statRoll() {
-        int score;
-
         Random roll = new Random();
-        int dice1 = roll.nextInt(6) + 1;
-        int dice2 = roll.nextInt(6) + 1;
-        int dice3 = roll.nextInt(6) + 1;
-        int dice4 = roll.nextInt(6) + 1;
+        Integer[] ability = {(roll.nextInt(6)+1), (roll.nextInt(6)+1), (roll.nextInt(6)+1), (roll.nextInt(6)+1)};
 
-        if (dice1 <= dice2 && dice1 <= dice3 && dice1 <= dice4) {
-            score = dice2 + dice3 + dice4;
-        }
-        else if (dice2 <= dice1 && dice2 <= dice3 && dice2 <= dice4) {
-            score = dice1 + dice3 + dice4;
-        }
-        else if (dice3 <= dice1 && dice3 <= dice1 && dice3 <= dice4) {
-            score = dice1 + dice2 + dice4;
-        }
-        else if (dice4 <= dice1 && dice4 <= dice2 && dice4 <= dice3) {
-            score = dice1 + dice2 + dice3;
-        }
-        else {
-            return 0;
-        }
-        return score;
+        Arrays.sort(ability, Collections.reverseOrder());
+        return ability[0] + ability[1] + ability[2];
     }
 }

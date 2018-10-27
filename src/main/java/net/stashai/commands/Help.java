@@ -13,6 +13,8 @@ public class Help {
                 + "\n"
                 + "invite or inv"
                 + "\n"
+                + "supinv"
+                + "\n"
                 + "destiny or d2 (item)"
                 + "\n"
                 + "wow (item)"

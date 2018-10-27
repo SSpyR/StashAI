@@ -1,5 +1,6 @@
 package net.stashai.commands;
 
+import net.stashai.Bot;
 import net.stashai.databases.MaplestorySearch;
 import net.stashai.databases.dnd.FiveESearch;
 import net.stashai.databases.dnd.PathfinderSearch;
@@ -48,6 +49,22 @@ public class Command {
     public void invite(IMessage message) {
         message.getClient().getOrCreatePMChannel(message.getAuthor()).sendMessage("Here is an invite link for Stash AI: https://discordapp.com/api/oauth2/authorize?client_id=491779560577433609&permissions=36883520&scope=bot");
         message.getChannel().sendMessage("A bot invite link has been sent to you!");
+    }
+
+    public void supinv(IMessage message) {
+        message.getClient().getOrCreatePMChannel(message.getAuthor()).sendMessage("Here is an invite link to the Stash AI server: https://discord.gg/WGvD4vV");
+        message.getChannel().sendMessage("A server invite link has been sent to you!");
+    }
+
+    public void shutdown(IMessage message) {
+        if (message.getAuthor().getStringID().equals("98200921950920704")) {
+            message.getChannel().sendMessage("Shutting down...");
+            message.getClient().logout();
+            Bot.logger.info("BOT SHUTDOWN BY USER");
+        }
+        else {
+            message.getChannel().sendMessage("You are not authorized to use that command.");
+        }
     }
 
     //Destiny 2
@@ -106,7 +123,7 @@ public class Command {
 
     public void statRolls(IMessage message) {
         message.reply(Arrays.toString(StatRolls.rolls()));
-        //message.getChannel().sendMessage(Arrays.toString(StatRolls.modifiers()));
+        message.reply(Arrays.toString(StatRolls.modifiers()));
     }
 
     //Battlerite
