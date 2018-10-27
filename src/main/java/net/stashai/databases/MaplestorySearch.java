@@ -26,10 +26,13 @@ public class MaplestorySearch {
                     return "https://maplestory2.gamepedia.com" + link.attr("href");
                 }
             }
+            if (term.toLowerCase().contains(" ")) {
+                return "https://maplestory2.gamepedia.com/index.php?search=" + term.toLowerCase().replace(" ", "+");
+            }
+            return "https://maplestory2.gamepedia.com/index.php?search=" + term.toLowerCase();
         }
         catch (IOException e) {
             return null;
         }
-        return "Page Could Not Be Found.";
     }
 }
