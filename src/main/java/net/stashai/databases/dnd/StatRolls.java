@@ -28,14 +28,7 @@ public class StatRolls {
         String[] mods;
 
         for (int k = 0; k < score.length; k++) {
-            int a = 20;
-            int m = 5;
-            while (a != score[k]) {
-                a--;
-                if (a % 2 == 0 || (a+1) == 20) {
-                    m--;
-                }
-            }
+            int m = ((score[k])/2) - 5;
             mod[k] = m;
         }
 

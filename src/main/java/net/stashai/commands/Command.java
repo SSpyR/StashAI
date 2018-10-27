@@ -110,8 +110,8 @@ public class Command {
     }
 
     public void statRolls(IMessage message) {
-        message.reply(Arrays.toString(StatRolls.rolls()));
-        message.reply(Arrays.toString(StatRolls.modifiers()));
+        message.reply("Ability Scores: " + Arrays.toString(StatRolls.rolls()));
+        message.reply("Ability Modifiers: " + Arrays.toString(StatRolls.modifiers()));
     }
 
     //Battlerite
