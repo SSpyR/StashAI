@@ -19,24 +19,12 @@ public class Command {
 
     //General Commands
     public void help(IMessage message) {
-        message.getClient().getOrCreatePMChannel(message.getAuthor()).sendMessage(Help.list());
+        CommandHelp.list(message);
         message.getChannel().sendMessage("A list of commands have been sent to you!");
     }
 
     public void about(IMessage message) {
-        message.getChannel().sendMessage("**About Stash AI** \n"
-                + "\n"
-                + "Stash AI is a Discord bot whose purpose"
-                + "\n"
-                + "is to provide direct links to databases"
-                + "\n"
-                + "for items in games, specifically MMO types (not limited to though)"
-                + "\n"
-                + "This bot also has options for getting information"
-                + "\n"
-                + "for D&D purposes and making rolls for said RPG \n"
-                + "\n"
-                + "**Made by Angel LaVoie aka Keiosu**");
+        CommandAbout.desc(message);
     }
 
     public void github(IMessage message) {
