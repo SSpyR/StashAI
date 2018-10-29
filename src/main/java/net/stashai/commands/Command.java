@@ -4,6 +4,7 @@ import net.stashai.Bot;
 import net.stashai.databases.MaplestorySearch;
 import net.stashai.databases.dnd.FiveESearch;
 import net.stashai.databases.dnd.PathfinderSearch;
+import net.stashai.databases.dnd.Roll;
 import net.stashai.databases.dnd.StatRolls;
 import net.stashai.databases.battlerite.BattleriteSearch;
 import net.stashai.databases.battlerite.BrBuildsSearch;
@@ -112,6 +113,16 @@ public class Command {
     public void statRolls(IMessage message) {
         message.reply("Ability Scores: " + Arrays.toString(StatRolls.scorerolls()));
         message.reply("Ability Modifiers: " + Arrays.toString(StatRolls.modifiers()));
+    }
+
+    public void roll(IMessage message) {
+        if (message.toString().contains("?roll d")) {
+            s = message.toString().replace("?roll d".toLowerCase(), "");
+        }
+        if (message.toString().contains("?r d")) {
+            s = message.toString().replace("?r d".toLowerCase(), "");
+        }
+        message.reply(Roll.rolls(s));
     }
 
     //Battlerite
