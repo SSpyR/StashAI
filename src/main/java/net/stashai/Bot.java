@@ -1,6 +1,7 @@
 package net.stashai;
 
 import net.stashai.events.AnnotationListener;
+import net.stashai.events.NewUserHandler;
 import net.stashai.events.ReadyHandler;
 import sx.blah.discord.api.ClientBuilder;
 import sx.blah.discord.api.IDiscordClient;
@@ -9,7 +10,7 @@ import sx.blah.discord.util.DiscordException;
 
 import java.util.logging.Logger;
 
-//TODO Implement next game database, add explanations for each command?, use reactions to see if a source was helpful?
+//TODO Implement next game database, add explanations for each command?, use reactions to see if a source was helpful?, roll command
 public class Bot {
 
     public static Logger logger = Logger.getLogger("Stash AI");
@@ -23,6 +24,7 @@ public class Bot {
         logger.info("REGISTERING LISTENERS");
         dispatcher.registerListener(new AnnotationListener());
         dispatcher.registerListener(new ReadyHandler());
+        dispatcher.registerListener(new NewUserHandler());
         logger.info("READY TO START");
     }
 

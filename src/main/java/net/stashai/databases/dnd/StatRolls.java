@@ -8,7 +8,7 @@ public class StatRolls {
 
     private static int[] score = new int[6];
 
-    public static String[] rolls() {
+    public static String[] scorerolls() {
         String[] scores;
 
         for (int i = 0; i < score.length; i++) {

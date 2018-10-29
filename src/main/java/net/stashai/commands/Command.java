@@ -110,7 +110,7 @@ public class Command {
     }
 
     public void statRolls(IMessage message) {
-        message.reply("Ability Scores: " + Arrays.toString(StatRolls.rolls()));
+        message.reply("Ability Scores: " + Arrays.toString(StatRolls.scorerolls()));
         message.reply("Ability Modifiers: " + Arrays.toString(StatRolls.modifiers()));
     }
 
