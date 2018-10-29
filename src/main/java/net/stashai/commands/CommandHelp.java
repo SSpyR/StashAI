@@ -6,9 +6,9 @@ import sx.blah.discord.util.RequestBuffer;
 
 import java.awt.*;
 
-public class CommandHelp {
+class CommandHelp {
 
-    public static void list(IMessage message) {
+    static void list(IMessage message) {
         EmbedBuilder embed = new EmbedBuilder();
 
         embed.withAuthorName("Stash AI");
@@ -18,7 +18,7 @@ public class CommandHelp {
         embed.withTitle("List of Commands");
         embed.withDescription("Commands currently able to used and processed with the Stash AI bot");
 
-        embed.appendField("Genenral Commands", "help"
+        embed.appendField("General Commands", "help"
                 + "\n"
                 + "about"
                 + "\n"
@@ -40,7 +40,9 @@ public class CommandHelp {
                 + "\n"
                 + "pathfinder/pf (term)"
                 + "\n"
-                + "rollstats", true);
+                + "rollstats"
+                + "\n"
+                + "roll (dice roll + mods)", true);
 
         embed.withFooterText("Stash AI | Created by Angel LaVoie aka Keiosu");
 

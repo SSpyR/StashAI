@@ -2,9 +2,9 @@ package net.stashai.databases.battlerite;
 
 public class BattleriteSearch {
 
-    private static String URL = "https://topplerite.com/guide?target=";
-
     public static String search(String champ) {
+        String URL = "https://topplerite.com/guide?target=";
+
         if (champ.equals("?battlerite") || champ.equals("?br")) {
             return "No page request found, please enter a champion name after the battlerite command";
         }

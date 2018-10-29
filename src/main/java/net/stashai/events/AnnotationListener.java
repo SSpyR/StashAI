@@ -52,7 +52,6 @@ public class AnnotationListener {
                 put("?rollstats", () -> Command.statRolls(message));
                 put("?rs", () -> Command.statRolls(message));
                 put("?roll", () -> Command.roll(message));
-                put("?r", () -> Command.roll(message));
                 put("?battlerite", () -> Command.battleRite(message));
                 put("?br", () -> Command.battleRite(message));
                 put("?brbuilds", () -> Command.brBuilds(message));

@@ -17,7 +17,6 @@ public class MaplestorySearch {
     }
 
     private static String mapleData(String term) {
-        String URL = "https://maplestory2.gamepedia.com/MapleStory_2_Wiki";
         try {
             Document doc = Jsoup.connect("https://maplestory2.gamepedia.com/MapleStory_2_Wiki").get();
             Elements links = doc.select("a[href]");

@@ -2,9 +2,9 @@ package net.stashai.databases.battlerite;
 
 public class BrBuildsSearch {
 
-    private static String URL = "https://www.battleritebuilds.com/characters/";
-
     public static String buildSearch(String champ) {
+        String URL = "https://www.battleritebuilds.com/characters/";
+
         if (champ.equals("?brbuilds")) {
             return "No page request found, please enter a champion name after the battlerite builds command";
         }

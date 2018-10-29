@@ -6,9 +6,9 @@ import sx.blah.discord.util.RequestBuffer;
 
 import java.awt.*;
 
-public class CommandAbout {
+class CommandAbout {
 
-    public static void desc(IMessage message) {
+    static void desc(IMessage message) {
         EmbedBuilder embed = new EmbedBuilder();
 
         embed.withAuthorName("Stash AI");
