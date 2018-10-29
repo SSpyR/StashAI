@@ -111,18 +111,14 @@ public class Command {
     }
 
     public void statRolls(IMessage message) {
-        message.reply("Ability Scores: " + Arrays.toString(StatRolls.scorerolls()));
-        message.reply("Ability Modifiers: " + Arrays.toString(StatRolls.modifiers()));
+        StatRolls.scoreDisplay(Arrays.toString(StatRolls.scoreRolls()), Arrays.toString(StatRolls.modifiers()), message);
     }
 
     public void roll(IMessage message) {
-        if (message.toString().contains("?roll d")) {
-            s = message.toString().replace("?roll d".toLowerCase(), "");
+        if (message.toString().contains("?roll")) {
+            s = message.toString().replace("?roll ".toLowerCase(), "");
         }
-        if (message.toString().contains("?r d")) {
-            s = message.toString().replace("?r d".toLowerCase(), "");
-        }
-        message.reply(Roll.rolls(s));
+        Roll.rollsDisplay(Roll.rolls(s), message, s);
     }
 
     //Battlerite
