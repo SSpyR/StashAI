@@ -27,7 +27,7 @@ public class Roll {
 
         int k = diceroll.indexOf('d');
         if (k == 0) {
-            int die = Integer.parseInt(diceroll.substring((k+1), (i-1)));
+            int die = Integer.parseInt(diceroll.substring((k+1)).replace(" + " + mod, ""));
             nat = dice.nextInt(die) + 1;
             int result = nat + mod;
             return Integer.toString(result) + "\n{" + Integer.toString(nat) + " + " + Integer.toString(mod) + "}";

@@ -45,6 +45,7 @@ public class AnnotationListener {
                 put("?wow", () -> Command.wow(message));
                 put("?maplestory", () -> Command.maplestory(message));
                 put("?mp2", () -> Command.maplestory(message));
+                put("?mhw", () -> Command.mhw(message));
                 put("?pathfinder", () -> Command.pathfinder(message));
                 put("?pf", () -> Command.pathfinder(message));
                 put("?5e", () -> Command.fiveE(message));
@@ -52,6 +53,7 @@ public class AnnotationListener {
                 put("?rollstats", () -> Command.statRolls(message));
                 put("?rs", () -> Command.statRolls(message));
                 put("?roll", () -> Command.roll(message));
+                put("?rage", () -> Command.rage(message));
                 put("?battlerite", () -> Command.battleRite(message));
                 put("?br", () -> Command.battleRite(message));
                 put("?brbuilds", () -> Command.brBuilds(message));
