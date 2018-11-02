@@ -33,7 +33,7 @@ public class Roll {
             return Integer.toString(result) + "\n{" + Integer.toString(nat) + " + " + Integer.toString(mod) + "}";
         }
         else if (k > 0) {
-            int die = Integer.parseInt(diceroll.substring((k+1), (k+3)).replace(" ", ""));
+            int die = Integer.parseInt(diceroll.substring((k+1)).replace(" + " + mod, ""));
             int nod = Integer.parseInt(diceroll.substring(0, (k)));
             Integer[] nats = new Integer[nod];
             int allnat = 0;
