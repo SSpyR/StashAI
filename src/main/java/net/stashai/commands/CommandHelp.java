@@ -26,7 +26,9 @@ class CommandHelp {
                 + "\n"
                 + "invite/inv"
                 + "\n"
-                + "supinv", true);
+                + "supinv"
+                + "\n"
+                + "wiki (term)", true);
         embed.appendField("Game Commands", "destiny/d2 (item)"
                 + "\n"
                 + "wow (item)"

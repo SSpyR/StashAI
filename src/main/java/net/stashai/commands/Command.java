@@ -1,15 +1,14 @@
 package net.stashai.commands;
 
 import net.stashai.Bot;
-import net.stashai.databases.MaplestorySearch;
+import net.stashai.databases.*;
 import net.stashai.databases.dnd.FiveESearch;
 import net.stashai.databases.dnd.PathfinderSearch;
 import net.stashai.databases.dnd.Roll;
 import net.stashai.databases.dnd.StatRolls;
 import net.stashai.databases.battlerite.BattleriteSearch;
 import net.stashai.databases.battlerite.BrBuildsSearch;
-import net.stashai.databases.DestinySearch;
-import net.stashai.databases.WoWSearch;
+import net.stashai.databases.wiki.WikipediaSearch;
 import sx.blah.discord.handle.obj.IMessage;
 
 import java.util.Arrays;
@@ -87,6 +86,13 @@ public class Command {
         message.getChannel().sendMessage("(Pages provided by Maplestory 2 Gamepedia)");
     }
 
+    //Monster Hunter World
+    public void mhw(IMessage message) {
+        s = (message.getContent().toLowerCase().replace("?mhw ".toLowerCase(), ""));
+        message.reply(MHWSearch.search(s));
+        message.getChannel().sendMessage("(Pages provided by MHW Fextralife Wiki)");
+    }
+
     //Dungeons and Dragons
     public void pathfinder(IMessage message) {
         if (message.toString().contains("?pathfinder")) {
@@ -121,6 +127,11 @@ public class Command {
         Roll.rollsDisplay(Roll.rolls(s), message, s);
     }
 
+    //Fun
+    public void rage(IMessage message) {
+        message.reply("***You Rage***");
+    }
+
     //Battlerite
     public void battleRite(IMessage message) {
         if (message.toString().contains("?battlerite")) {
@@ -139,5 +150,14 @@ public class Command {
         }
         message.reply(BrBuildsSearch.buildSearch(s));
         message.getChannel().sendMessage("(Builds provided by BattleriteBuilds)");
+    }
+
+    //Wikipedia
+    public void wiki(IMessage message) {
+        if (message.toString().contains("?wiki")) {
+            s = (message.getContent().toLowerCase().replace("?wiki ".toLowerCase(), ""));
+        }
+        message.reply(WikipediaSearch.search(s));
+        message.getChannel().sendMessage("(Pages provided by Wikipedia)");
     }
 }

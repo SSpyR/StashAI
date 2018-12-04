@@ -43,6 +43,7 @@ public class AnnotationListener {
                 put("?destiny", () -> Command.destiny(message));
                 put("?d2", () -> Command.destiny(message));
                 put("?wow", () -> Command.wow(message));
+                put("?vanilla", () -> Command.vanilla(message));
                 put("?maplestory", () -> Command.maplestory(message));
                 put("?mp2", () -> Command.maplestory(message));
                 put("?mhw", () -> Command.mhw(message));
@@ -57,6 +58,7 @@ public class AnnotationListener {
                 put("?battlerite", () -> Command.battleRite(message));
                 put("?br", () -> Command.battleRite(message));
                 put("?brbuilds", () -> Command.brBuilds(message));
+                put("?wiki", () -> Command.wiki(message));
             }
         };
     }
