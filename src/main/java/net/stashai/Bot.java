@@ -10,7 +10,7 @@ import sx.blah.discord.util.DiscordException;
 
 import java.util.logging.Logger;
 
-//TODO Implement next game database, add explanations for each command?, use reactions to see if a source was helpful?, Warhammer?
+//TODO add explanations for each command?, use reactions to see if a source was helpful?, Warhammer?
 public class Bot {
 
     public static Logger logger = Logger.getLogger("Stash AI");
