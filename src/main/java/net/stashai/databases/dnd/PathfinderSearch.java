@@ -1,5 +1,6 @@
 package net.stashai.databases.dnd;
 
+import net.stashai.Bot;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -21,7 +22,7 @@ public class PathfinderSearch {
             Document doc = Jsoup.connect("https://www.d20pfsrd.com/").get();
             Elements links = doc.select("a[href]");
             for (Element link : links) {
-                if (link.toString().contains(term)) {
+                if (link.toString().contains(term.replace(" ", "-"))) {
                     return link.attr("href");
                 }
             }
